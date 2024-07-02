@@ -1,5 +1,6 @@
 # Core functionalities like setting colors
 class Clt:
+    RESET = '\033[39m'
     BLACK = '\033[30m'
     RED = '\033[31m'
     GREEN = '\033[32m'
@@ -8,7 +9,6 @@ class Clt:
     MAGENTA = '\033[35m'
     CYAN = '\033[36m'
     WHITE = '\033[37m'
-    RESET = '\033[39m'
     LIGHTBLACK_EX = '\033[90m'
     LIGHTRED_EX = '\033[91m'
     LIGHTGREEN_EX = '\033[92m'
