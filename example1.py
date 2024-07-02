@@ -1,6 +1,6 @@
 # Example usage of the library
-from colort import Clt
-from colort import set_color, reset_color
+from colorty import Clt
+from colorty import set_color, reset_color
 
 
 set_color('31')  # Set text color to red

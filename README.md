@@ -1,22 +1,22 @@
-# Colort
+# Colorty
 
-Colort is a Python library for handling colored text in various terminal environments including Windows CMD, PowerShell, and Unix-like terminals on Ubuntu and macOS.
+Colorty is a Python library for handling colored text in various terminal environments including Windows CMD, PowerShell, and Unix-like terminals on Ubuntu and macOS.
 
 ## Installation
 
-Install Colort using pip:
+Install Colorty using pip:
 
 
 
 ```bash
-pip install colort
+pip install colorty
 ```
 ## Usage
 
 Basic example:
 
 ```python
-from colort import set_color, reset_color
+from colorty import set_color, reset_color
 
 set_color('31')  # Set text color to red
 print("This text is red")
@@ -30,7 +30,7 @@ print("This text is default color")
 Using the `Clt` class:
 
 ```python
-from colort import Clt
+from colorty import Clt
 
 # format partial string with color
 print(f"This is {Clt.RED}partial red{Clt.RESET} and {Clt.BLUE}partial blue{Clt.RESET} text.")
