@@ -9,12 +9,13 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 
 setup(
     name='colorty',
-    version='0.1.0',
+    version='0.1.5',
     packages=find_packages(exclude=['tests*']),  # Exclude test packages
     install_requires=[],
     author='Vivek',
     author_email='xsvk@gmx.com',
     description='A simple library for handling colored text in terminal environments.',
+    long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     url='https://github.com/dynstat/colorty',
     classifiers=[
