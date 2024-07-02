@@ -45,3 +45,6 @@ print(f"This is {Clt.RED}partial red{Clt.RESET} and {Clt.BLUE}partial blue{Clt.R
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+
+**Acknowledgments**: inspired from the Colorama library. 
