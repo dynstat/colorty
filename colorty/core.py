@@ -1,40 +1,56 @@
 # Core functionalities like setting colors
-class Clt:
-    RESET = '\033[39m'
-    BLACK = '\033[30m'
-    RED = '\033[31m'
-    GREEN = '\033[32m'
-    YELLOW = '\033[33m'
-    BLUE = '\033[34m'
-    MAGENTA = '\033[35m'
-    CYAN = '\033[36m'
-    WHITE = '\033[37m'
-    LIGHTBLACK_EX = '\033[90m'
-    LIGHTRED_EX = '\033[91m'
-    LIGHTGREEN_EX = '\033[92m'
-    LIGHTYELLOW_EX = '\033[93m'
-    LIGHTBLUE_EX = '\033[94m'
-    LIGHTMAGENTA_EX = '\033[95m'
-    LIGHTCYAN_EX = '\033[96m'
-    LIGHTWHITE_EX = '\033[97m'
+from dataclasses import dataclass
 
+
+@dataclass
+class Clt:
+    RESET: str = '\033[39m'
+    BLACK: str = '\033[30m'
+    RED: str = '\033[31m'
+    GREEN: str = '\033[32m'
+    YELLOW: str = '\033[33m'
+    BLUE: str = '\033[34m'
+    MAGENTA: str = '\033[35m'
+    CYAN: str = '\033[36m'
+    WHITE: str = '\033[37m'
+    LIGHTBLACK_EX: str = '\033[90m'
+    LIGHTRED_EX: str = '\033[91m'
+    LIGHTGREEN_EX: str = '\033[92m'
+    LIGHTYELLOW_EX: str = '\033[93m'
+    LIGHTBLUE_EX: str = '\033[94m'
+    LIGHTMAGENTA_EX: str = '\033[95m'
+    LIGHTCYAN_EX: str = '\033[96m'
+    LIGHTWHITE_EX: str = '\033[97m'
+
+@dataclass
 class Style:
-    RESET_ALL = "\033[0m"
-    BOLD = "\033[1m"
-    UNDERLINE = "\033[4m"
-    BRIGHT = "\033[1m"
-    DIM = "\033[2m"
-    NORMAL = "\033[22m"
+    RESET_ALL: str = "\033[0m"
+    BOLD: str = "\033[1m"
+    UNDERLINE: str = "\033[4m"
+    BRIGHT: str = "\033[1m"
+    DIM: str = "\033[2m"
+    NORMAL: str = "\033[22m"
     
     
 def set_color(color):
     """
-    Set the terminal text color.
+    Set the terminal text color by color name or ANSI code.
     """
     try:
-        print(f"\033[{color}m", end="")
+        # Check if input is an integer or a string that can be converted to an integer
+        if isinstance(color, int) or (isinstance(color, str) and color.isdigit()):
+            color_code = f"\033[{int(color)}m"
+        else:
+            # Access the color code using the dataclass and color name
+            color_code = getattr(Clt, color.upper())
+        
+        print(color_code, end="")
+    except AttributeError:
+        print(f"Error: '{color}' is not a valid color name.")
+    except ValueError:
+        print(f"Error: '{color}' must be a valid integer for ANSI codes.")
     except Exception as e:
-        print(f"Error setting color: {e}")
+        print(f"Unexpected error: {e}")
 
 def reset_color():
     """
