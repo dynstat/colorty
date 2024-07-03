@@ -17,13 +17,15 @@ Basic example:
 
 ```python
 from colorty import set_color, reset_color
-
-set_color('31')  # Set text color to red
+set_color('RED') # Set text color to red using color name
 print("This text is red")
+set_color('31') # Set text color to red using ANSI code
 print("This text is still red")
-set_color('32')  # Set text color to green
+set_color('GREEN') # Set text color to green using color name
 print("This text is green")
-reset_color()    # Reset text color to default
+set_color(32) # Set text color to green using ANSI code
+print("This text is still green")
+reset_color() # Reset text color to default
 print("This text is default color")
 ```
 
