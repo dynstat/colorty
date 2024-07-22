@@ -35,6 +35,38 @@ class Style:
 def set_color(color):
     """
     Set the terminal text color by color name or ANSI code.
+    
+    ### Example: 
+    set_color('green')
+    
+    set_color(32)
+    
+    ### Supported colors:
+    - BLACK
+    - RED
+    - GREEN
+    - YELLOW
+    - BLUE
+    - MAGENTA
+    - CYAN
+    - WHITE
+    - LIGHTBLACK_EX
+    - LIGHTRED_EX
+    - LIGHTGREEN_EX
+    - LIGHTYELLOW_EX
+    - LIGHTBLUE_EX
+    - LIGHTMAGENTA_EX
+    - LIGHTCYAN_EX
+    - LIGHTWHITE_EX
+
+    Args:
+        color (str or int): Color name or ANSI code.
+
+    Raises:
+        AttributeError: If the color name is not valid.
+        ValueError: If the ANSI code is not a valid integer.
+        
+          
     """
     try:
         # Check if input is an integer or a string that can be converted to an integer
